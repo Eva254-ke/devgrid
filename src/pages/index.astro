@@ -4,7 +4,6 @@ import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import SystemsGrid from '../components/SystemsGrid.astro';
 import Workflow from '../components/Workflow.astro';
-import Guarantees from '../components/Guarantees.astro';
 import SolutionsGrid from '../components/SolutionsGrid.astro';
 import Footer from '../components/Footer.astro';
 ---
@@ -13,70 +12,100 @@ import Footer from '../components/Footer.astro';
   <Hero />
   <SystemsGrid />
   <Workflow />
-  <Guarantees />
   <SolutionsGrid />
-  <section class="careers-cta-home lazy-section parallax-section" data-reveal data-speed="0.3">
-    <div class="careers-cta-home-container">
+  
+  <!-- Careers CTA Section -->
+  <section class="careers-cta-home" data-reveal>
+    <div class="careers-cta-container">
       <h2>Build the future of enterprise technology</h2>
       <p>We're looking for engineers who demand excellence. No bureaucracy, just world-class engineering.</p>
-      <a href="/careers" class="careers-cta-home-btn btn-glow">View Open Positions</a>
+      <a href="/careers" class="careers-cta-btn btn-glow">View Open Positions</a>
     </div>
   </section>
+  
   <Footer />
 </Layout>
 
 <style>
-.careers-cta-home {
-  padding: clamp(80px, 10vw, 140px) 5vw;
-  background: var(--bg-primary);
-  margin-top: -1px;
-}
-
-.careers-cta-home-container {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.careers-cta-home h2 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-  margin: 0 0 24px;
-}
-
-.careers-cta-home p {
-  font-size: clamp(1.1rem, 2vw, 1.35rem);
-  line-height: 1.5;
-  color: var(--text-secondary);
-  margin: 0 0 48px;
-}
-
-.careers-cta-home-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--text-primary);
-  color: var(--bg-main);
-  padding: 16px 40px;
-  border-radius: var(--radius-pill);
-  font-size: 1rem;
-  font-weight: 500;
-  text-decoration: none;
-  transition: all 0.3s var(--ease-apple);
-}
-
-.careers-cta-home-btn:hover {
-  transform: scale(1.02);
-  background: var(--accent-blue);
-  box-shadow: var(--shadow-glow);
-}
-
-/* Mobile Edge-to-Edge CTA */
-@media (max-width: 768px) {
+  /* --- Careers CTA Section (Apple-Grade) --- */
   .careers-cta-home {
-    padding: clamp(60px, 8vw, 100px) 16px;
+    width: 100%;
+    padding: clamp(80px, 10vw, 140px) 5vw;
+    background: var(--bg-primary);
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s var(--ease-apple);
   }
-}
+
+  /* Subtle top border for seamless section transition */
+  .careers-cta-home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--rule), transparent);
+  }
+
+  .careers-cta-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .careers-cta-home h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: var(--text-primary);
+    margin: 0 0 24px;
+  }
+
+  .careers-cta-home p {
+    font-size: clamp(1.1rem, 2vw, 1.35rem);
+    line-height: 1.5;
+    color: var(--text-secondary);
+    margin: 0 0 48px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .careers-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--text-primary);
+    color: var(--bg-main);
+    padding: 16px 40px;
+    border-radius: 999px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s var(--ease-apple);
+  }
+
+  .careers-cta-btn:hover {
+    transform: scale(1.02);
+    background: var(--accent-blue);
+    color: #ffffff;
+    box-shadow: 0 8px 24px -4px rgba(0, 113, 227, 0.3);
+  }
+
+  /* --- Responsive Adjustments --- */
+  @media (max-width: 768px) {
+    .careers-cta-home {
+      padding: clamp(60px, 8vw, 100px) 5vw;
+    }
+
+    .careers-cta-btn {
+      width: 100%;
+      max-width: 320px; /* Thumb-friendly max width */
+    }
+  }
 </style>

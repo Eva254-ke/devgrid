@@ -8,7 +8,7 @@ const navItems = [
 ];
 ---
 
-<header class="apple-header" data-reveal>
+<header class="apple-header" id="apple-header">
   <div class="header-inner">
     <!-- Brand Logo -->
     <a href="/" class="brand-link hover-effect">
@@ -19,8 +19,8 @@ const navItems = [
       </div>
     </a>
 
-    <!-- Center Navigation Links -->
-    <nav>
+    <!-- Center Navigation Links (Desktop) -->
+    <nav class="desktop-nav">
       <ul class="nav-list">
         {navItems.map((item) => (
           <li>
@@ -30,7 +30,7 @@ const navItems = [
       </ul>
     </nav>
 
-    <!-- Global Search Modal Trigger -->
+    <!-- Global Search Modal Trigger (Desktop) -->
     <button class="search-trigger hover-effect" id="open-search-btn" aria-label="Search site">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
         <circle cx="11" cy="11" r="8"></circle>
@@ -39,5 +39,55 @@ const navItems = [
       <span>Search</span>
       <kbd class="kbd-shortcut">⌘K</kbd>
     </button>
+
+    <!-- Mobile Menu Toggle (Hamburger) -->
+    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
   </div>
+
+  <!-- Mobile Navigation Overlay -->
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <div class="mobile-nav-inner">
+      {navItems.map((item) => (
+        <a href={item.href} class="mobile-nav-link">{item.name}</a>
+      ))}
+      
+      <div class="mobile-nav-divider"></div>
+      
+      <button class="search-trigger mobile-search-trigger" aria-label="Search site">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <span>Search</span>
+      </button>
+    </div>
+  </nav>
 </header>
+
+<script>
+  // Mobile Menu Logic
+  const header = document.getElementById('apple-header');
+  const toggleBtn = document.getElementById('mobile-menu-toggle');
+  
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+      const isOpen = header.classList.toggle('is-open');
+      toggleBtn.setAttribute('aria-expanded', isOpen);
+      document.body.classList.toggle('menu-open', isOpen);
+    });
+
+    // Auto-close menu when a link is clicked
+    const mobileLinks = header.querySelectorAll('.mobile-nav-link');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        header.classList.remove('is-open');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('menu-open');
+      });
+    });
+  }
+</script>
