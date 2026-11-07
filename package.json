@@ -1,0 +1,20 @@
+{
+  "name": "devgrid-site",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.23.4"
+  },
+  "scripts": {
+    "dev": "cross-env NODE_OPTIONS=--max-old-space-size=8192 astro dev",
+    "build": "cross-env NODE_OPTIONS=--max-old-space-size=8192 astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^7.4.5"
+  },
+  "devDependencies": {
+    "cross-env": "^10.1.0"
+  }
+}

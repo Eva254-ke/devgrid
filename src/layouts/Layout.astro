@@ -1,0 +1,20 @@
+---
+// src/layouts/Layout.astro
+import '../styles/styles.css';
+import Header from '../components/Header.astro';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/jpeg" href="/logo.jpeg" />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <script src="/src/scripts/scrollObserver.js"></script>
+  </body>
+</html>

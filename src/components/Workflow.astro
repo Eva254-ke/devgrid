@@ -1,0 +1,49 @@
+---
+// src/components/Workflow.astro
+import '../styles/workflow.css';
+
+const steps = [
+  {
+    phase: '01',
+    title: 'Architectural Appraisal & Scoping',
+    description: 'We audit business bottlenecks, hardware requirements, offline considerations, and technical scope to produce precise engineering specifications.'
+  },
+  {
+    phase: '02',
+    title: 'Interface & System Design',
+    description: 'Constructing tactile user interfaces adhering to strict HIG principles alongside modular database schematics and API data contracts.'
+  },
+  {
+    phase: '03',
+    title: 'Modular Engineering & Testing',
+    description: 'Building lean application logic, offline transaction queues, and peripheral hardware sync backed by comprehensive regression testing.'
+  },
+  {
+    phase: '04',
+    title: 'Deployment & Continuous Support',
+    description: 'Deploying optimized builds to web, iOS, Android, and retail terminals, backed by direct technical handover and long-term uptime maintenance.'
+  }
+];
+---
+
+<section id="workflow" class="workflow-section" data-reveal>
+  <div class="workflow-header" data-reveal>
+    <span class="workflow-eyebrow">Methodology</span>
+    <h2 class="workflow-title">Engineering Process</h2>
+    <p class="workflow-subtitle">
+      A transparent pipeline designed to take software from concept to production-grade reliability.
+    </p>
+  </div>
+
+  <div class="workflow-timeline">
+    {steps.map((item, index) => (
+      <div class="workflow-step" data-reveal style={`--delay: ${index * 0.15}s`}>
+        <div class="step-phase">{item.phase}</div>
+        <div class="step-details">
+          <h3>{item.title}</h3>
+          <p>{item.description}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

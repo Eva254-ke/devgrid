@@ -1,0 +1,47 @@
+---
+// src/components/SystemsGrid.astro
+import '../styles/systems-grid.css';
+
+const verticals = [
+  {
+    title: 'Enterprise Web Platforms',
+    description: 'High-performance web architecture designed for instantaneous load times, deterministic asset delivery, and structural scalability.',
+    metric: '50ms',
+    label: 'Global Response Latency Benchmark'
+  },
+  {
+    title: 'Cross-Platform Mobile Applications',
+    description: 'Native-execution mobile engineering delivering fluid sixty frames-per-second motion, offline data sync, and uncompromised interface fidelity.',
+    metric: '60 FPS',
+    label: 'Deterministic Interface Rendering'
+  },
+  {
+    title: 'POS Business Architectures',
+    description: 'Mission-critical retail hardware synchronization, offline transaction queues, and continuous inventory tracking built for zero downtime.',
+    metric: '100%',
+    label: 'Offline Transaction Continuity'
+  }
+];
+---
+
+<section id="systems" class="systems-section" data-reveal>
+  <div class="systems-header" data-reveal>
+    <span class="systems-eyebrow">Core Engineering Verticals</span>
+    <h2 class="systems-title">Built for absolute certainty.</h2>
+  </div>
+
+  <div class="systems-zigzag">
+    {verticals.map((item, index) => (
+      <div class="zigzag-row" data-reveal style={`--delay: ${index * 0.15}s`}>
+        <div class="zigzag-content">
+          <h3>{item.title}</h3>
+          <p>{item.description}</p>
+        </div>
+        <div class="zigzag-graphic">
+          <span class="metric-big">{item.metric}</span>
+          <span class="metric-sub">{item.label}</span>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,442 @@
+---
+// src/pages/careers.astro
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Careers | DevGrid Innovations">
+  <section class="careers-hero">
+    <div class="careers-hero-content">
+      <span class="careers-eyebrow">Join Our Team</span>
+      <h1 class="careers-title">Build the future of enterprise technology</h1>
+      <p class="careers-subtitle">
+        We're looking for engineers who demand excellence. No bureaucracy, just world-class engineering.
+      </p>
+      <div class="careers-stats">
+        <div class="stat">
+          <span class="stat-number">12</span>
+          <span class="stat-label">Engineers</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">0</span>
+          <span class="stat-label">Bureaucracy</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">∞</span>
+          <span class="stat-label">Learning</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="careers-values">
+    <div class="careers-values-container">
+      <h2 class="careers-values-title">Our engineering principles</h2>
+      <div class="careers-values-grid">
+        <div class="careers-value-item">
+          <h3>Reliability First</h3>
+          <p>Systems that never fail when it matters most. We build for zero-downtime operations.</p>
+        </div>
+        <div class="careers-value-item">
+          <h3>Performance Obsession</h3>
+          <p>Sub-second responses aren't optional—they're the baseline. We optimize relentlessly.</p>
+        </div>
+        <div class="careers-value-item">
+          <h3>Craft Excellence</h3>
+          <p>Apple-grade attention to detail in every pixel, interaction, and line of code.</p>
+        </div>
+        <div class="careers-value-item">
+          <h3>Direct Impact</h3>
+          <p>Your work affects millions. No ivory tower architecture—just real systems, real users.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="careers-openings">
+    <div class="careings-openings-container">
+      <div class="careers-openings-header">
+        <h2>Open positions</h2>
+        <p class="careers-openings-subtitle">All roles are fully remote. No time zone restrictions.</p>
+      </div>
+
+      <div class="careers-openings-list">
+        <div class="careers-opening">
+          <div class="careers-opening-header">
+            <h3>Senior Backend Engineer</h3>
+            <span class="careers-opening-type">Full-time</span>
+          </div>
+          <p class="careers-opening-desc">
+            Architect and scale our mission-critical systems. You'll design the infrastructure that handles thousands of transactions per second with absolute reliability.
+          </p>
+          <ul class="careers-opening-requirements">
+            <li>5+ years building production backend systems</li>
+            <li>Deep expertise in Node.js, Go, or Rust</li>
+            <li>Experience with distributed systems and microservices</li>
+            <li>Understanding of offline-first architectures</li>
+          </ul>
+          <a href="#apply" class="careers-opening-cta">Apply now</a>
+        </div>
+
+        <div class="careers-opening">
+          <div class="careers-opening-header">
+            <h3>Frontend Engineer (Mobile Focus)</h3>
+            <span class="careers-opening-type">Full-time</span>
+          </div>
+          <p class="careers-opening-desc">
+            Build fluid, 60fps mobile applications that feel like native experiences. You'll work directly with hardware integration and complex state management.
+          </p>
+          <ul class="careers-opening-requirements">
+            <li>3+ years building mobile applications</li>
+            <li>Expertise in React Native or Flutter</li>
+            <li>Experience with Bluetooth LE and hardware integration</li>
+            <li>Understanding of mobile performance optimization</li>
+          </ul>
+          <a href="#apply" class="careers-opening-cta">Apply now</a>
+        </div>
+
+        <div class="careers-opening">
+          <div class="careers-opening-header">
+            <h3>Systems Engineer</h3>
+            <span class="careers-opening-type">Full-time</span>
+          </div>
+          <p class="careers-opening-desc">
+            Design and implement our POS architectures. You'll work on embedded systems, thermal printers, barcode scanners, and retail hardware ecosystems.
+          </p>
+          <ul class="careers-opening-requirements">
+            <li>3+ years in systems/embedded engineering</li>
+            <li>Experience with retail POS systems</li>
+            <li>Knowledge of hardware communication protocols</li>
+            <li>Understanding of offline transaction queues</li>
+          </ul>
+          <a href="#apply" class="careers-opening-cta">Apply now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="careers-cta">
+    <div class="careers-cta-container">
+      <h2>Don't see a perfect fit?</h2>
+      <p>We're always looking for exceptional talent. Send us your resume and let's build something extraordinary.</p>
+      <a href="mailto:careers@devgrid.agency" class="careers-cta-btn">General Application</a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+.careers-hero {
+  padding: 160px 22px 120px;
+  background: linear-gradient(180deg, var(--bg-main) 0%, var(--bg-main) 100%);
+}
+
+.careers-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.careers-eyebrow {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent-blue);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.careers-title {
+  font-size: clamp(44px, 8vw, 80px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin: 0 0 28px;
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.careers-subtitle {
+  font-size: clamp(20px, 3vw, 26px);
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto 60px;
+}
+
+.careers-stats {
+  display: flex;
+  justify-content: center;
+  gap: clamp(40px, 15vw, 120px);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-number {
+  font-size: clamp(48px, 10vw, 80px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.careers-values {
+  padding: clamp(80px, 10vw, 140px) 5vw;
+  background: var(--bg-primary);
+}
+
+.careers-values-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.careers-values-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin: 0 0 clamp(60px, 8vw, 100px);
+}
+
+.careers-values-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(40px, 6vw, 80px);
+}
+
+.careers-value-item {
+  padding: 40px;
+  border-radius: 24px;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  transition: transform 0.4s var(--ease-apple), border-color 0.4s var(--ease-apple);
+}
+
+.careers-value-item:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent);
+}
+
+.careers-value-item h3 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0 0 16px;
+}
+
+.careers-value-item p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.careers-openings {
+  padding: clamp(80px, 10vw, 140px) 5vw;
+  background: var(--bg-main);
+}
+
+.careers-openings-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.careers-openings-header h2 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin: 0 0 16px;
+}
+
+.careers-openings-subtitle {
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.careers-openings-list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(32px, 5vw, 60px);
+  margin-top: clamp(80px, 10vw, 140px);
+}
+
+.careers-opening {
+  padding: 48px;
+  border-radius: 24px;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  transition: transform 0.4s var(--ease-apple), box-shadow 0.4s var(--ease-apple), border-color 0.4s var(--ease-apple);
+}
+
+.careers-opening:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.08);
+  border-color: var(--accent);
+}
+
+.careers-opening-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.careers-opening h3 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.careers-opening-type {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent-blue);
+  background: rgba(0, 113, 227, 0.08);
+  padding: 6px 12px;
+  border-radius: 99px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.careers-opening-desc {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0 0 32px;
+}
+
+.careers-opening-requirements {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0 0 32px;
+  padding: 0;
+}
+
+.careers-opening-requirements li {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.careers-opening-requirements li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--accent-blue);
+  border-radius: 50%;
+}
+
+.careers-opening-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--accent-blue);
+  text-decoration: none;
+  transition: gap 0.3s var(--ease-apple);
+}
+
+.careers-opening-cta:hover {
+  gap: 12px;
+}
+
+.careers-cta {
+  padding: clamp(80px, 10vw, 140px) 5vw;
+  background: var(--bg-primary);
+}
+
+.careers-cta-container {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.careers-cta h2 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin: 0 0 24px;
+}
+
+.careers-cta p {
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin: 0 0 48px;
+}
+
+.careers-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--text-primary);
+  color: var(--bg-main);
+  padding: 16px 40px;
+  border-radius: 99px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s var(--ease-apple);
+}
+
+.careers-cta-btn:hover {
+  transform: scale(1.02);
+  background: var(--accent-blue);
+}
+
+@media (max-width: 768px) {
+  .careers-hero {
+    padding: 120px 18px 80px;
+  }
+
+  .careers-stats {
+    gap: 40px;
+  }
+
+  .careers-values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .careers-value-item {
+    padding: 32px;
+  }
+
+  .careers-opening {
+    padding: 32px;
+  }
+
+  .careers-opening-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+</style>

@@ -1,0 +1,52 @@
+---
+// src/components/AppsSection.astro
+import '../styles/apps-section.css';
+
+const appsContent = {
+  title: 'Web & Mobile Applications',
+  description: 'High-performance web platforms and native mobile applications engineered for speed, reliability, and exceptional user experiences.',
+  features: [
+    {
+      icon: '⚡',
+      title: 'Sub-Second Load Times',
+      text: 'Optimized architectures ensuring instant page loads and responsive interactions.'
+    },
+    {
+      icon: '📱',
+      title: 'Native Mobile Experience',
+      text: 'Fluid 60fps applications that feel indistinguishable from platform-native apps.'
+    },
+    {
+      icon: '🔒',
+      title: 'Offline-First Architecture',
+      text: 'Seamless functionality regardless of connectivity, with robust data synchronization.'
+    },
+    {
+      icon: '🎨',
+      title: 'Apple-Quality Design',
+      text: 'Pixel-perfect interfaces adhering to strict design principles and HIG guidelines.'
+    }
+  ]
+};
+---
+
+<section id="apps" class="apps-section" data-reveal>
+  <div class="apps-container">
+    <div class="apps-content">
+      <h2 class="apps-title" data-reveal>{appsContent.title}</h2>
+      <p class="apps-description" data-reveal>{appsContent.description}</p>
+      
+      <div class="apps-features">
+        {appsContent.features.map((feature, index) => (
+          <div class="app-feature-item card-hover" data-reveal style={`--delay: ${index * 0.1}s`}>
+            <span class="feature-icon">{feature.icon}</span>
+            <h3 class="feature-title">{feature.title}</h3>
+            <p class="feature-text">{feature.text}</p>
+          </div>
+        ))}
+      </div>
+      
+      <a href="#contact" class="apps-cta btn-glow">Start Your Project</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,73 @@
+---
+// src/pages/index.astro
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import SystemsGrid from '../components/SystemsGrid.astro';
+import Workflow from '../components/Workflow.astro';
+import SolutionsGrid from '../components/SolutionsGrid.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="DevGrid Innovations | Enterprise Systems & Web Engineering">
+  <Hero />
+  <SystemsGrid />
+  <Workflow />
+  <SolutionsGrid />
+  <section class="careers-cta-home lazy-section parallax-section" data-reveal data-speed="0.3">
+    <div class="careers-cta-home-container">
+      <h2>Build the future of enterprise technology</h2>
+      <p>We're looking for engineers who demand excellence. No bureaucracy, just world-class engineering.</p>
+      <a href="/careers" class="careers-cta-home-btn btn-glow">View Open Positions</a>
+    </div>
+  </section>
+  <Footer />
+</Layout>
+
+<style>
+.careers-cta-home {
+  padding: clamp(80px, 10vw, 140px) 5vw;
+  background: var(--bg-primary);
+  margin-top: -1px;
+}
+
+.careers-cta-home-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.careers-cta-home h2 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin: 0 0 24px;
+}
+
+.careers-cta-home p {
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin: 0 0 48px;
+}
+
+.careers-cta-home-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--text-primary);
+  color: var(--bg-main);
+  padding: 16px 40px;
+  border-radius: var(--radius-pill);
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s var(--ease-apple);
+}
+
+.careers-cta-home-btn:hover {
+  transform: scale(1.02);
+  background: var(--accent-blue);
+  box-shadow: var(--shadow-glow);
+}
+</style>

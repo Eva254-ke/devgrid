@@ -1,0 +1,43 @@
+---
+// src/components/Header.astro
+const navItems = [
+  { name: 'Systems', href: '#systems' },
+  { name: 'Web & Apps', href: '#apps' },
+  { name: 'POS Platform', href: '#pos' },
+  { name: 'Agency Workflow', href: '#workflow' },
+];
+---
+
+<header class="apple-header" data-reveal>
+  <div class="header-inner">
+    <!-- Brand Logo -->
+    <a href="/" class="brand-link hover-effect">
+      <img src="/logo.jpeg" alt="DevGrid" class="brand-logo" />
+      <div class="brand-text">
+        <span>DevGrid</span>
+        <span class="brand-badge">Innovations</span>
+      </div>
+    </a>
+
+    <!-- Center Navigation Links -->
+    <nav>
+      <ul class="nav-list">
+        {navItems.map((item) => (
+          <li>
+            <a href={item.href} class="nav-link hover-effect">{item.name}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <!-- Global Search Modal Trigger -->
+    <button class="search-trigger hover-effect" id="open-search-btn" aria-label="Search site">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <span>Search</span>
+      <kbd class="kbd-shortcut">⌘K</kbd>
+    </button>
+  </div>
+</header>
