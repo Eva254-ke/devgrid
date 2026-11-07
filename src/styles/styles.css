@@ -360,6 +360,61 @@ body {
   border: 1px solid var(--header-border);
 }
 
+/* --- Header Actions (Desktop Right Side) --- */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-cta-btn {
+  display: none; /* Hidden on mobile by default */
+  align-items: center;
+  justify-content: center;
+  background: var(--text-primary);
+  color: var(--bg-main);
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s var(--ease-apple);
+}
+
+.header-cta-btn:hover {
+  background: var(--accent-blue);
+  color: #ffffff;
+  transform: scale(1.02);
+}
+
+/* Mobile Menu CTA */
+.mobile-cta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 14px 24px;
+  background: var(--accent-blue);
+  color: #ffffff;
+  border-radius: var(--radius-pill);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 16px;
+  transition: transform 0.2s var(--ease-apple);
+}
+
+.mobile-cta-btn:active {
+  transform: scale(0.98);
+}
+
+/* Show desktop CTA on larger screens */
+@media (min-width: 769px) {
+  .header-cta-btn { 
+    display: inline-flex; 
+  }
+}
+
 /* --- Mobile Menu Toggle --- */
 .mobile-menu-toggle {
   display: none;

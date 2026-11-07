@@ -30,15 +30,20 @@ const navItems = [
       </ul>
     </nav>
 
-    <!-- Global Search Modal Trigger (Desktop) -->
-    <button class="search-trigger hover-effect" id="open-search-btn" aria-label="Search site">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-        <circle cx="11" cy="11" r="8"></circle>
-        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-      </svg>
-      <span>Search</span>
-      <kbd class="kbd-shortcut">⌘K</kbd>
-    </button>
+    <!-- Right Side Actions (Desktop) -->
+    <div class="header-actions">
+      <button class="search-trigger hover-effect" id="open-search-btn" aria-label="Search site">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <span>Search</span>
+        <kbd class="kbd-shortcut">⌘K</kbd>
+      </button>
+      
+      <!-- Primary Conversion CTA -->
+      <a href="/get-started" class="header-cta-btn hover-effect">Get started</a>
+    </div>
 
     <!-- Mobile Menu Toggle (Hamburger) -->
     <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
@@ -57,13 +62,8 @@ const navItems = [
       
       <div class="mobile-nav-divider"></div>
       
-      <button class="search-trigger mobile-search-trigger" aria-label="Search site">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-        <span>Search</span>
-      </button>
+      <!-- Primary Conversion CTA (Mobile) -->
+      <a href="/get-started" class="mobile-cta-btn hover-effect">Get started</a>
     </div>
   </nav>
 </header>
@@ -81,7 +81,7 @@ const navItems = [
     });
 
     // Auto-close menu when a link is clicked
-    const mobileLinks = header.querySelectorAll('.mobile-nav-link');
+    const mobileLinks = header.querySelectorAll('.mobile-nav-link, .mobile-cta-btn');
     mobileLinks.forEach(link => {
       link.addEventListener('click', () => {
         header.classList.remove('is-open');

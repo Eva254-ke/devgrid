@@ -1,0 +1,219 @@
+---
+// src/pages/get-started.astro
+import Layout from '../layouts/Layout.astro';
+import '../styles/get-started.css';
+
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mkjjazwd";
+---
+
+<Layout title="Get Started | DevGrid Innovations">
+  
+  <section class="get-started-hero">
+    <div class="get-started-container">
+      
+      <!-- Left Column: The Hook -->
+      <div class="hero-content" data-reveal>
+        <span class="hero-eyebrow">Start a Project</span>
+        <h1 class="hero-title">Tell us about your vision, and let's build what's next.</h1>
+        <p class="hero-subtitle">
+          Fill out the form to connect with our engineering team. We typically respond within 24 hours to discuss your architecture, timeline, and technical requirements.
+        </p>
+        
+        <!-- Trust / Process Micro-Section -->
+        <div class="process-steps">
+          <div class="process-step">
+            <span class="step-number">1</span>
+            <span class="step-text">We review your brief</span>
+          </div>
+          <div class="process-step">
+            <span class="step-number">2</span>
+            <span class="step-text">30-min discovery call</span>
+          </div>
+          <div class="process-step">
+            <span class="step-number">3</span>
+            <span class="step-text">Technical proposal</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: The Form -->
+      <div class="hero-form-wrapper" data-reveal style="--delay: 0.1s">
+        
+        <!-- Success Message (Hidden by default) -->
+        <div id="form-success" class="form-success-message" style="display: none;">
+          <div class="success-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          <h3>Message sent successfully!</h3>
+          <p>Thank you for reaching out. Our engineering team will review your brief and get back to you within 24 hours.</p>
+        </div>
+
+        <!-- Error Message (Hidden by default) -->
+        <div id="form-error" class="form-error-message" style="display: none;">
+          <p>Oops! Something went wrong. Please try again or email us directly at <a href="mailto:contact@devgrid.agency">contact@devgrid.agency</a>.</p>
+        </div>
+
+        <form id="contact-form" action={FORMSPREE_ENDPOINT} method="POST" class="contact-form">
+          
+          <!-- Formspree Honeypot (Spam Protection) -->
+          <input type="text" name="_gotcha" style="display: none;" />
+          
+          <!-- Tell Formspree to return JSON instead of redirecting -->
+          <input type="hidden" name="_format" value="json" />
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" required placeholder="Jane Doe" />
+            </div>
+            <div class="form-group">
+              <label for="company">Company Name</label>
+              <input type="text" id="company" name="company" placeholder="Acme Corp" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Work Email</label>
+            <input type="email" id="email" name="email" required placeholder="jane@company.com" />
+          </div>
+
+          <div class="form-group">
+            <label>Project Type</label>
+            <div class="chip-group">
+              <label class="chip-label">
+                <input type="radio" name="project_type" value="Web Platform" required />
+                <span class="chip">Web Platform</span>
+              </label>
+              <label class="chip-label">
+                <input type="radio" name="project_type" value="Mobile Application" />
+                <span class="chip">Mobile App</span>
+              </label>
+              <label class="chip-label">
+                <input type="radio" name="project_type" value="POS System" />
+                <span class="chip">POS System</span>
+              </label>
+              <label class="chip-label">
+                <input type="radio" name="project_type" value="Other" />
+                <span class="chip">Other</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Project Description</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Tell us about your goals, timeline, and any specific technical requirements..."></textarea>
+          </div>
+
+          <button type="submit" id="submit-btn" class="submit-btn btn-glow">
+            <span class="btn-text">Get started</span>
+            <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+            <!-- Loading Spinner (Hidden by default) -->
+            <svg class="btn-spinner" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="display: none;">
+              <path d="M21 12a9 9 0 1 1-6.219-8.56"></path>
+            </svg>
+          </button>
+          
+          <p class="form-disclaimer">
+            By submitting this form, you agree to our <a href="/privacy">Privacy Policy</a>. We respect your data.
+          </p>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Direct Contact & Presence Section -->
+  <section class="presence-section" data-reveal>
+    <div class="presence-container">
+      <h2 class="presence-title">Our Presence</h2>
+      <div class="presence-grid">
+        
+        <div class="presence-card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          </div>
+          <h3>Headquarters</h3>
+          <p class="location">Nairobi, Kenya</p>
+          <p class="detail">Available for in-person consultations and local enterprise deployments.</p>
+          <a href="mailto:contact@devgrid.agency" class="card-link">contact@devgrid.agency →</a>
+        </div>
+
+        <div class="presence-card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          </div>
+          <h3>Global Engineering</h3>
+          <p class="location">Remote-First Team</p>
+          <p class="detail">Our distributed engineers operate across time zones to ensure continuous development and rapid delivery.</p>
+          <a href="/careers" class="card-link">Join the team →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<script>
+  // Premium AJAX Form Submission for Formspree
+  const form = document.getElementById('contact-form');
+  const submitBtn = document.getElementById('submit-btn');
+  const btnText = submitBtn.querySelector('.btn-text');
+  const btnIcon = submitBtn.querySelector('.btn-icon');
+  const btnSpinner = submitBtn.querySelector('.btn-spinner');
+  const successMessage = document.getElementById('form-success');
+  const errorMessage = document.getElementById('form-error');
+
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault(); // Prevent default page reload
+      
+      // 1. Set Loading State
+      submitBtn.disabled = true;
+      btnText.textContent = 'Sending...';
+      btnIcon.style.display = 'none';
+      btnSpinner.style.display = 'block';
+      errorMessage.style.display = 'none';
+
+      // 2. Prepare Data
+      const formData = new FormData(form);
+
+      try {
+        // 3. Send to Formspree
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 
+            'Accept': 'application/json' // Crucial: tells Formspree to return JSON, not a redirect
+          }
+        });
+
+        // 4. Handle Response
+        if (response.ok) {
+          form.style.display = 'none';
+          successMessage.style.display = 'block';
+          form.reset();
+        } else {
+          const data = await response.json();
+          console.error('Formspree error:', data);
+          errorMessage.style.display = 'block';
+          resetButton();
+        }
+      } catch (error) {
+        console.error('Network error:', error);
+        errorMessage.style.display = 'block';
+        resetButton();
+      }
+    });
+
+    function resetButton() {
+      submitBtn.disabled = false;
+      btnText.textContent = 'Get started';
+      btnIcon.style.display = 'block';
+      btnSpinner.style.display = 'none';
+    }
+  }
+</script>
