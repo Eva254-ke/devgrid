@@ -18,6 +18,14 @@
   background: var(--bg-grey);
 }
 
+/* Mobile Edge-to-Edge Solutions Section */
+@media (max-width: 768px) {
+  .solutions-section {
+    padding: 40px 16px;
+    max-width: none;
+  }
+}
+
 /* --- Header Typography --- */
 .solutions-header {
   text-align: center;

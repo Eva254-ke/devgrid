@@ -10,6 +10,15 @@
   background: var(--bg-white);
 }
 
+/* Mobile Edge-to-Edge Hero */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 100px 16px 60px;
+    width: 100%;
+    max-width: none;
+  }
+}
+
 /* Eyebrow / Category Tagline */
 .hero-eyebrow {
   font-size: 14px;
@@ -209,7 +218,9 @@
 /* Mobile Alignment adjustments */
 @media (max-width: 640px) {
   .hero-section {
-    padding: 100px 18px 60px;
+    padding: 80px 16px 40px;
+    width: 100%;
+    max-width: none;
   }
 
   .hero-actions {

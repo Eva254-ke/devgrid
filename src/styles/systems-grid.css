@@ -27,6 +27,13 @@
   background: var(--bg-grey);
 }
 
+/* Mobile Edge-to-Edge Systems Section */
+@media (max-width: 768px) {
+  .systems-section {
+    padding: 0 16px;
+  }
+}
+
 /* --- Header Typography --- */
 .systems-header {
   text-align: left;

@@ -233,6 +233,14 @@ html {
   justify-content: space-between;
 }
 
+/* Mobile Edge-to-Edge Header */
+@media (max-width: 768px) {
+  .header-inner {
+    max-width: none;
+    padding: 0 16px;
+  }
+}
+
 /* --- Brand Identity --- */
 .brand-link {
   display: flex;

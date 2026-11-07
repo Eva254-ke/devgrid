@@ -27,6 +27,13 @@
   background: var(--bg-cream);
 }
 
+/* Mobile Edge-to-Edge Workflow Section */
+@media (max-width: 768px) {
+  .workflow-section {
+    padding: clamp(30px, 4vw, 50px) 16px 0;
+  }
+}
+
 /* --- Header Typography --- */
 .workflow-header {
   text-align: left; /* Aligned with the timeline for a cohesive edge-to-edge feel */

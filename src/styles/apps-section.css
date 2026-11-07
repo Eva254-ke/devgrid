@@ -25,6 +25,13 @@
   background: var(--bg-cream);
 }
 
+/* Mobile Edge-to-Edge Apps Section */
+@media (max-width: 768px) {
+  .apps-section {
+    padding: clamp(60px, 8vw, 100px) 16px;
+  }
+}
+
 .apps-container {
   max-width: 1000px;
   margin: 0 auto;

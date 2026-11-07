@@ -4,6 +4,7 @@ import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import SystemsGrid from '../components/SystemsGrid.astro';
 import Workflow from '../components/Workflow.astro';
+import Guarantees from '../components/Guarantees.astro';
 import SolutionsGrid from '../components/SolutionsGrid.astro';
 import Footer from '../components/Footer.astro';
 ---
@@ -12,6 +13,7 @@ import Footer from '../components/Footer.astro';
   <Hero />
   <SystemsGrid />
   <Workflow />
+  <Guarantees />
   <SolutionsGrid />
   <section class="careers-cta-home lazy-section parallax-section" data-reveal data-speed="0.3">
     <div class="careers-cta-home-container">
@@ -69,5 +71,12 @@ import Footer from '../components/Footer.astro';
   transform: scale(1.02);
   background: var(--accent-blue);
   box-shadow: var(--shadow-glow);
+}
+
+/* Mobile Edge-to-Edge CTA */
+@media (max-width: 768px) {
+  .careers-cta-home {
+    padding: clamp(60px, 8vw, 100px) 16px;
+  }
 }
 </style>
