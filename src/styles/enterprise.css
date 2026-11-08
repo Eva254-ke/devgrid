@@ -1,0 +1,421 @@
+/* src/styles/enterprise.css */
+
+/* --- Global Section Utilities --- */
+.section-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 5vw;
+}
+
+.section-heading {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  margin: 0 0 48px;
+  text-align: center;
+}
+
+/* --- 1. Hero Section --- */
+.enterprise-hero {
+  padding: clamp(80px, 12vw, 140px) 5vw;
+  background: var(--bg-main); /* Crisp white for enterprise clarity */
+}
+
+.hero-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero-title {
+  font-size: clamp(3.5rem, 8vw, 6rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.hero-text p {
+  font-size: clamp(1.1rem, 2vw, 1.25rem);
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* --- 2. Approach Section --- */
+.approach-section {
+  padding: clamp(80px, 10vw, 120px) 0;
+  background: var(--bg-grey);
+}
+
+.approach-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.approach-label {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+
+.approach-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0 0 16px;
+  color: var(--text-primary);
+}
+
+.approach-desc {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Text-Only Flow Diagrams */
+.flow-diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 32px;
+  background: var(--bg-main);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--rule);
+}
+
+.flow-diagram.horizontal {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.flow-node {
+  padding: 12px 20px;
+  background: var(--bg-main);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-align: center;
+}
+
+.flow-node.highlight {
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+}
+
+.flow-node.dark {
+  background: var(--text-primary);
+  color: var(--bg-main);
+  border-color: var(--text-primary);
+}
+
+.flow-arrow {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  font-weight: 300;
+}
+
+/* --- 3. Capabilities Section --- */
+.capabilities-section {
+  padding: clamp(80px, 10vw, 120px) 0;
+  background: var(--bg-main);
+}
+
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.capability-card {
+  padding: 40px 32px;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+  transition: transform 0.3s var(--ease-apple);
+}
+
+.capability-card:hover {
+  transform: translateY(-4px);
+}
+
+.capability-num {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  opacity: 0.1;
+  line-height: 1;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.capability-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 12px;
+  color: var(--text-primary);
+}
+
+.capability-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* --- 4. Phases Section (Timeline) --- */
+.phases-section {
+  padding: clamp(80px, 10vw, 120px) 0;
+  background: var(--bg-grey);
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 40px;
+  border-left: 1px solid var(--rule);
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 48px;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -53px;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  background: var(--bg-main);
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--accent-blue);
+}
+
+.timeline-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 8px;
+  color: var(--text-primary);
+}
+
+.timeline-content p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* --- 5. Governance Section --- */
+.governance-section {
+  padding: clamp(80px, 10vw, 120px) 0;
+  background: var(--bg-main);
+}
+
+.governance-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 48px;
+}
+
+.governance-sub {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.governance-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.governance-card {
+  padding: 32px;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+.governance-card h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0 0 12px;
+  color: var(--text-primary);
+}
+
+.governance-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* --- 6. Impact Section --- */
+.impact-section {
+  padding: clamp(80px, 10vw, 120px) 0;
+  background: var(--bg-grey);
+}
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.impact-card {
+  padding: 40px;
+  background: var(--bg-main);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+  position: relative;
+}
+
+.quote-mark {
+  font-size: 4rem;
+  line-height: 1;
+  color: var(--text-primary);
+  opacity: 0.1;
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  font-family: Georgia, serif;
+}
+
+.quote-text {
+  font-size: 1.1rem;
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--text-primary);
+  margin: 0 0 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.impact-metric {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-blue);
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.quote-author strong {
+  display: block;
+  font-size: 1rem;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.quote-author span {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* --- 7. Final CTA --- */
+.final-cta-section {
+  padding: clamp(80px, 10vw, 120px) 5vw;
+  background: #000000;
+  text-align: center;
+}
+
+.cta-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.final-cta-section h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  margin: 0 0 16px;
+  line-height: 1.1;
+}
+
+.final-cta-section p {
+  font-size: 1.1rem;
+  color: #a1a1a6;
+  margin: 0 0 32px;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  color: #000000;
+  padding: 14px 32px;
+  border-radius: 99px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s var(--ease-apple);
+}
+
+.cta-btn:hover {
+  transform: scale(1.02);
+}
+
+/* --- Scroll Reveal --- */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s var(--ease-apple), transform 0.8s var(--ease-apple);
+  transition-delay: var(--delay, 0s);
+}
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 900px) {
+  .hero-container,
+  .approach-grid,
+  .capabilities-grid,
+  .governance-grid,
+  .impact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+  }
+
+  .flow-diagram.horizontal {
+    flex-direction: column;
+  }
+  
+  .flow-arrow {
+    transform: rotate(90deg);
+  }
+}

@@ -1,0 +1,219 @@
+---
+// src/pages/startups.astro
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/startups.css';
+
+const principles = [
+  { num: '01', title: 'Fast Iterations', desc: 'We operate in rapid, sprint-based cycles. This keeps momentum high and ensures you see tangible progress every single week.' },
+  { num: '02', title: 'AI-Driven Engineering', desc: 'We leverage AI to automate boilerplate, optimize code, and accelerate testing, allowing our engineers to focus purely on complex logic.' },
+  { num: '03', title: 'Radical Transparency', desc: 'No black boxes. You get direct access to our repositories, daily standup summaries, and real-time progress tracking.' }
+];
+
+const timeline = [
+  { step: '01', title: 'Discovery', desc: 'We deeply understand your vision, target audience, and technical requirements to build a precise roadmap.' },
+  { step: '02', title: 'MVP Development', desc: 'We build the core features rapidly, focusing on a stable, scalable foundation that proves your concept.' },
+  { step: '03', title: 'Launch', desc: 'We deploy your product to production with rigorous testing, ensuring a flawless experience for your first users.' },
+  { step: '04', title: 'Scale & Optimize', desc: 'As you grow, we continuously optimize performance, add features, and refine the architecture.' }
+];
+
+const testimonials = [
+  { quote: "DevGrid didn't just write code; they acted as a true technical co-founder. We went from concept to funded MVP in 10 weeks.", author: "Sarah Jenkins", role: "Founder, FinTech Startup" },
+  { quote: "The transparency and speed of their AI-driven workflow is unmatched. They scaled our infrastructure seamlessly during our growth phase.", author: "Michael Chen", role: "CTO, SaaS Platform" }
+];
+
+const plans = [
+  { name: 'MVP Sprint', price: 'Fixed Scope', duration: '8-12 Weeks', features: ['Core feature development', 'UI/UX implementation', 'Cloud deployment', '30 days post-launch support'], popular: false },
+  { name: 'Growth Partner', price: 'Retainer', duration: 'Ongoing', features: ['Dedicated engineering squad', 'Continuous feature shipping', 'AI integration & optimization', '24/7 infrastructure monitoring', 'Quarterly technical audits'], popular: true },
+  { name: 'Scale & Optimize', price: 'Custom', duration: 'Project-based', features: ['Legacy system modernization', 'Performance tuning', 'Database scaling', 'Security & compliance audits'], popular: false }
+];
+---
+
+<Layout title="Startups | DevGrid Innovations">
+  
+  <!-- 1. Hero Section -->
+  <section class="startups-hero">
+    <div class="hero-container">
+      <div class="hero-content" data-reveal>
+        <h1 class="hero-title">Startups</h1>
+      </div>
+      <div class="hero-text" data-reveal style="--delay: 0.1s">
+        <p>From early product development to scaling and venture growth, DevGrid partners with startups at every stage — combining fast iterations, AI-driven engineering, and transparent collaboration to help you build, scale, and succeed faster.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. AI-Driven Development (Two Pillars) -->
+  <section class="pillars-section">
+    <div class="section-container">
+      <h2 class="section-heading" data-reveal>AI-Driven Development</h2>
+      
+      <div class="pillars-grid">
+        <!-- Left Pillar -->
+        <div class="pillar" data-reveal style="--delay: 0s">
+          <span class="pillar-label">Fast iterations</span>
+          <h3 class="pillar-title">Rapid Development Cycles</h3>
+          <p class="pillar-desc">At DevGrid, we specialize in turning ideas into scalable products through fast iterations that keep momentum high without sacrificing quality.</p>
+          
+          <!-- Text-Only Diagram -->
+          <div class="flow-diagram">
+            <div class="flow-node">Ideas</div>
+            <div class="flow-arrow">↓</div>
+            <div class="flow-row">
+              <div class="flow-card">Product</div>
+              <div class="flow-card">Product</div>
+              <div class="flow-card">Product</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Pillar -->
+        <div class="pillar" data-reveal style="--delay: 0.1s">
+          <span class="pillar-label">Engineering</span>
+          <h3 class="pillar-title">AI-Driven Engineering</h3>
+          <p class="pillar-desc">Our teams thrive on solving complex problems, applying AI-driven development and proven engineering practices to deliver robust solutions.</p>
+          
+          <!-- Text-Only Diagram -->
+          <div class="flow-diagram horizontal">
+            <div class="flow-node">Our Team</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-node highlight">AI-driven development</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-node">Robust Solutions</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Scaling Up Section -->
+  <section class="scaling-section">
+    <div class="section-container scaling-grid">
+      <!-- Left Diagram -->
+      <div class="scaling-diagram" data-reveal>
+        <div class="diagram-row top">
+          <div class="flow-node dark">DevGrid Ensures</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-node highlight">Fast Delivery</div>
+        </div>
+        
+        <div class="diagram-connector">↓</div>
+        
+        <div class="diagram-row middle">
+          <div class="flow-node">Integrations</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-stack">
+            <div class="flow-card small">Existing systems</div>
+            <div class="flow-card small">Third-party services</div>
+          </div>
+        </div>
+
+        <div class="diagram-connector">↓</div>
+
+        <div class="diagram-row bottom">
+          <div class="flow-text-box">while building the right infrastructure...</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-stack vertical">
+            <div class="flow-card small">Support Growth</div>
+            <div class="flow-card small">Resilience</div>
+            <div class="flow-card small">Long-term Success</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Text -->
+      <div class="scaling-content" data-reveal style="--delay: 0.1s">
+        <h2 class="section-heading">Scaling Up</h2>
+        <p>When your product gains traction, scaling becomes critical. DevGrid ensures fast delivery, enabling you to expand without losing momentum.</p>
+        <p>We streamline integrations with existing systems and third-party services, while building the right infrastructure to support growth, resilience, and long-term success.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Three Core Principles -->
+  <section class="principles-section">
+    <div class="section-container">
+      <div class="principles-grid">
+        {principles.map((item, index) => (
+          <div class="principle-card" data-reveal style={`--delay: ${index * 0.1}s`}>
+            <span class="principle-num">{item.num}</span>
+            <h3>{item.title}</h3>
+            <p>{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Process Timeline -->
+  <section class="timeline-section">
+    <div class="section-container">
+      <h2 class="section-heading" data-reveal>Our Process</h2>
+      <div class="timeline">
+        {timeline.map((item, index) => (
+          <div class="timeline-item" data-reveal style={`--delay: ${index * 0.1}s`}>
+            <div class="timeline-marker">{item.step}</div>
+            <div class="timeline-content">
+              <h3>{item.title}</h3>
+              <p>{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Success Stories -->
+  <section class="testimonials-section">
+    <div class="section-container">
+      <h2 class="section-heading" data-reveal>Startup Success</h2>
+      <div class="testimonials-grid">
+        {testimonials.map((item, index) => (
+          <div class="testimonial-card" data-reveal style={`--delay: ${index * 0.1}s`}>
+            <span class="quote-mark">“</span>
+            <p class="quote-text">{item.quote}</p>
+            <div class="quote-author">
+              <strong>{item.author}</strong>
+              <span>{item.role}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Engagement Models -->
+  <section class="plans-section">
+    <div class="section-container">
+      <h2 class="section-heading" data-reveal>Engagement Models</h2>
+      <div class="plans-grid">
+        {plans.map((plan, index) => (
+          <div class={`plan-card ${plan.popular ? 'popular' : ''}`} data-reveal style={`--delay: ${index * 0.1}s`}>
+            {plan.popular && <span class="popular-badge">Most Popular</span>}
+            <h3>{plan.name}</h3>
+            <div class="plan-price">{plan.price}</div>
+            <div class="plan-duration">{plan.duration}</div>
+            <ul class="plan-features">
+              {plan.features.map(feature => (
+                <li>{feature}</li>
+              ))}
+            </ul>
+            <a href="/get-started" class="plan-btn">Get started</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Final CTA -->
+  <section class="final-cta-section" data-reveal>
+    <div class="cta-container">
+      <h2>Just Launched – Are you a Digital Startup founder?</h2>
+      <p>Join our cohort of Pioneers and accelerate your journey with DevGrid.</p>
+      <a href="/get-started" class="cta-btn">Get started →</a>
+    </div>
+  </section>
+
+  <Footer />
+
+</Layout>

@@ -1,0 +1,161 @@
+---
+// src/pages/enterprise.astro
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/enterprise.css';
+
+const capabilities = [
+  { num: '01', title: 'Legacy Modernization', desc: 'Strategic refactoring and migration of monolithic systems to modular, cloud-native architectures without operational downtime.' },
+  { num: '02', title: 'High-Scale Performance', desc: 'Distributed systems engineering designed to handle millions of concurrent transactions with sub-second latency and high availability.' },
+  { num: '03', title: 'Security & Compliance', desc: 'Security-first development lifecycle. End-to-end encryption, role-based access, and architectures aligned with SOC 2 and GDPR standards.' }
+];
+
+const phases = [
+  { step: '01', title: 'Technical Audit & Discovery', desc: 'We analyze your current infrastructure, identify bottlenecks, and define measurable success criteria with your engineering leads.' },
+  { step: '02', title: 'Strategic Architecture', desc: 'Our senior engineers design a scalable, secure blueprint with clear milestones, resource allocation, and risk mitigation strategies.' },
+  { step: '03', title: 'Phased Execution', desc: 'Agile delivery in isolated, low-risk increments. Continuous integration, rigorous automated testing, and transparent progress reporting.' },
+  { step: '04', title: 'Managed Optimization', desc: 'Post-deployment monitoring, performance tuning, and dedicated long-term support to ensure sustained system health.' }
+];
+
+const governance = [
+  { title: 'End-to-End Encryption', desc: 'Data protected in transit and at rest using industry-leading cryptographic standards.' },
+  { title: '99.99% Uptime SLA', desc: 'Redundant architecture, automated failover, and continuous monitoring for mission-critical reliability.' },
+  { title: 'Strict Access Controls', desc: 'Comprehensive audit logs, SSO integration, and granular Role-Based Access Control (RBAC) implementation.' }
+];
+
+const testimonials = [
+  { quote: "DevGrid modernized our core transaction engine. We saw a 40% reduction in latency and zero downtime during the migration.", author: "VP of Engineering", company: "Global FinTech Corp", metric: "40% Latency Reduction" },
+  { quote: "Their security-first approach gave our compliance team complete confidence. The integration with our legacy CRM was flawless.", author: "Chief Technology Officer", company: "Healthcare Logistics Provider", metric: "Zero Compliance Flags" }
+];
+---
+
+<Layout title="Enterprise | DevGrid Innovations">
+  
+  <!-- 1. Hero Section -->
+  <section class="enterprise-hero">
+    <div class="hero-container">
+      <div class="hero-content" data-reveal>
+        <h1 class="hero-title">Enterprise</h1>
+      </div>
+      <div class="hero-text" data-reveal style="--delay: 0.1s">
+        <p>Mission-critical software architecture for global organizations. We modernize legacy systems, build high-scale platforms, and ensure strict compliance—so your engineering team can focus on core business logic.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. The Enterprise Approach -->
+  <section class="approach-section">
+    <div class="section-container">
+      <h2 class="section-heading" data-reveal>The Enterprise Approach</h2>
+      
+      <div class="approach-grid">
+        <div class="approach-col" data-reveal style="--delay: 0s">
+          <span class="approach-label">The Bottleneck</span>
+          <h3 class="approach-title">Legacy Constraints</h3>
+          <p class="approach-desc">Siloed data, technical debt, and scaling limitations slow down innovation and increase operational risk.</p>
+        </div>
+        
+        <div class="approach-col" data-reveal style="--delay: 0.1s">
+          <span class="approach-label">The DevGrid Standard</span>
+          <h3 class="approach-title">Unified Architecture</h3>
+          <p class="approach-desc">We design resilient, cloud-native systems that integrate seamlessly with your existing stack and scale predictably.</p>
+        </div>
+      </div>
+
+      <!-- Text-Only Flow Diagram -->
+      <div class="flow-diagram horizontal" data-reveal style="--delay: 0.2s">
+        <div class="flow-node dark">Legacy Systems</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node">Strategic Audit</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node">Modern Architecture</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node highlight">Seamless Integration</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Core Capabilities -->
+  <section class="capabilities-section">
+    <div class="section-container">
+      <div class="capabilities-grid">
+        {capabilities.map((item, index) => (
+          <div class="capability-card" data-reveal style={`--delay: ${index * 0.1}s`}>
+            <span class="capability-num">{item.num}</span>
+            <h3>{item.title}</h3>
+            <p>{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Engagement Model (Phased Execution) -->
+  <section class="phases-section">
+    <div class="section-container">
+      <h2 class="section-heading" data-reveal>Phased Execution</h2>
+      <div class="timeline">
+        {phases.map((item, index) => (
+          <div class="timeline-item" data-reveal style={`--delay: ${index * 0.1}s`}>
+            <div class="timeline-marker">{item.step}</div>
+            <div class="timeline-content">
+              <h3>{item.title}</h3>
+              <p>{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Trust & Governance -->
+  <section class="governance-section">
+    <div class="section-container">
+      <div class="governance-header" data-reveal>
+        <h2 class="section-heading" style="margin-bottom: 16px;">Built for Governance</h2>
+        <p class="governance-sub">We understand that enterprise software must be auditable, secure, and reliable.</p>
+      </div>
+      
+      <div class="governance-grid">
+        {governance.map((item, index) => (
+          <div class="governance-card" data-reveal style={`--delay: ${index * 0.1}s`}>
+            <h3>{item.title}</h3>
+            <p>{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Enterprise Impact -->
+  <section class="impact-section">
+    <div class="section-container">
+      <h2 class="section-heading" data-reveal>Enterprise Impact</h2>
+      <div class="impact-grid">
+        {testimonials.map((item, index) => (
+          <div class="impact-card" data-reveal style={`--delay: ${index * 0.1}s`}>
+            <span class="quote-mark">“</span>
+            <p class="quote-text">{item.quote}</p>
+            <div class="impact-metric">{item.metric}</div>
+            <div class="quote-author">
+              <strong>{item.author}</strong>
+              <span>{item.company}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Final CTA -->
+  <section class="final-cta-section" data-reveal>
+    <div class="cta-container">
+      <h2>Ready to modernize your infrastructure?</h2>
+      <p>Schedule a confidential technical assessment with our senior architects.</p>
+      <a href="/get-started" class="cta-btn">Request an Assessment →</a>
+    </div>
+  </section>
+
+  <Footer />
+
+</Layout>

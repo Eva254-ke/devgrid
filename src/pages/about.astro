@@ -1,0 +1,132 @@
+---
+// src/pages/about.astro
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/about.css';
+
+const metrics = [
+  { num: '100%', label: 'Senior Engineering Talent', desc: 'No juniors learning on your dime. Only seasoned architects and developers.' },
+  { num: 'Zero', label: 'Vendor Lock-in', desc: 'You own 100% of your code, infrastructure, and intellectual property. Always.' },
+  { num: 'Sub-second', label: 'Global Latency', desc: 'Architectures built for edge performance and instantaneous user experiences.' },
+  { num: '24/7', label: 'Enterprise Support', desc: 'Continuous monitoring, automated failover, and rapid incident response.' }
+];
+
+const principles = [
+  { num: '01', title: 'Craftsmanship over Speed', desc: 'We write clean, maintainable, and highly tested code. We refuse to take shortcuts that become crippling technical debt next quarter.' },
+  { num: '02', title: 'Radical Transparency', desc: 'You have full, unfiltered access to our repositories, CI/CD pipelines, and daily progress. We operate with zero black boxes.' },
+  { num: '03', title: 'Security by Design', desc: 'Security is never an afterthought. It is baked into our architecture, code reviews, and deployment processes from day one.' }
+];
+
+const techStack = ['Frontend (React, Astro)', 'Backend (Node, Python, Go)', 'Cloud (AWS, Vercel)', 'AI & Data Engineering', 'Mobile (iOS, Android)', 'DevOps & CI/CD'];
+---
+
+<Layout title="About Us | DevGrid Innovations">
+  
+  <!-- 1. The Manifesto (Hero) -->
+  <section class="about-hero">
+    <div class="section-container">
+      <span class="hero-eyebrow" data-reveal>About DevGrid</span>
+      <h1 class="hero-title" data-reveal style="--delay: 0.1s">
+        We build the software that powers the next generation of businesses.
+      </h1>
+      <p class="hero-subtitle" data-reveal style="--delay: 0.2s">
+        DevGrid is a collective of senior software engineers, architects, and designers. We partner with ambitious startups and global enterprises to build resilient, high-scale systems.
+      </p>
+    </div>
+  </section>
+
+  <!-- 2. The "Why We Exist" -->
+  <section class="contrast-section">
+    <div class="section-container contrast-grid">
+      <div class="contrast-col" data-reveal>
+        <span class="contrast-label">The Industry Standard</span>
+        <h2 class="contrast-title">Bloated Agencies</h2>
+        <p class="contrast-desc">Traditional agencies rely on junior developers learning on your dime, opaque billing, and rigid processes that kill momentum and inflate budgets.</p>
+      </div>
+      <div class="contrast-col" data-reveal style="--delay: 0.1s">
+        <span class="contrast-label">The DevGrid Standard</span>
+        <h2 class="contrast-title">Senior Engineering Only</h2>
+        <p class="contrast-desc">We operate as a seamless extension of your team. 100% senior talent, transparent workflows, and a relentless focus on long-term architectural health.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. The Impact (Metrics) -->
+  <section class="metrics-section">
+    <div class="section-container">
+      <div class="metrics-grid">
+        {metrics.map((item, index) => (
+          <div class="metric-card" data-reveal style={`--delay: ${index * 0.1}s`}>
+            <span class="metric-num">{item.num}</span>
+            <h3 class="metric-label">{item.label}</h3>
+            <p class="metric-desc">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Engineering Principles -->
+  <section class="principles-section">
+    <div class="section-container">
+      <h2 class="section-heading" data-reveal>Our Engineering Principles</h2>
+      <div class="principles-list">
+        {principles.map((item, index) => (
+          <div class="principle-row" data-reveal style={`--delay: ${index * 0.1}s`}>
+            <span class="principle-num">{item.num}</span>
+            <div class="principle-content">
+              <h3>{item.title}</h3>
+              <p>{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Technology Ecosystem -->
+  <section class="tech-section">
+    <div class="section-container">
+      <h2 class="section-heading" data-reveal>Our Technology Ecosystem</h2>
+      <p class="tech-subtitle" data-reveal style="--delay: 0.1s">We are technology-agnostic. We select the right tools for your specific scale, security, and performance requirements.</p>
+      
+      <div class="flow-diagram horizontal" data-reveal style="--delay: 0.2s">
+        <div class="flow-node">Frontend</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node">Backend</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node">Cloud</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node highlight">AI & Data</div>
+      </div>
+
+      <div class="tech-tags" data-reveal style="--delay: 0.3s">
+        {techStack.map(tech => (
+          <span class="tech-tag">{tech}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. The Collective -->
+  <section class="collective-section">
+    <div class="section-container">
+      <div class="collective-content" data-reveal>
+        <h2 class="section-heading" style="margin-bottom: 24px;">A Collective of Builders</h2>
+        <p>We don't have a massive sales team or a bloated management hierarchy. We are a distributed collective of engineers who have built systems for Fortune 500s and funded startups. We code, we architect, and we solve hard problems.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Final CTA -->
+  <section class="final-cta-section" data-reveal>
+    <div class="cta-container">
+      <h2>Ready to build something exceptional?</h2>
+      <p>Let's discuss your technical challenges and how we can help you solve them.</p>
+      <a href="/get-started" class="cta-btn">Start a Conversation →</a>
+    </div>
+  </section>
+
+  <Footer />
+
+</Layout>
