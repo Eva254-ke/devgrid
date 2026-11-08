@@ -1,16 +1,16 @@
 ---
 // src/components/Header.astro
 const navItems = [
-  { name: 'About', href: '/about' },
+  { name: 'Systems', href: '#systems' },
   { name: 'Startups', href: '/startups' },
   { name: 'Enterprise', href: '/enterprise' },
-  { name: 'Agency Workflow', href: '#workflow' },
+  { name: 'About', href: '/about' },
 ];
 ---
 
 <header class="apple-header" id="apple-header">
   <div class="header-inner">
-    <!-- Brand Logo -->
+    <!-- Brand Logo (Far Left) -->
     <a href="/" class="brand-link hover-effect">
       <img src="/logo.jpeg" alt="DevGrid" class="brand-logo" />
       <div class="brand-text">
@@ -32,16 +32,6 @@ const navItems = [
 
     <!-- Right Side Actions (Desktop) -->
     <div class="header-actions">
-      <button class="search-trigger hover-effect" id="open-search-btn" aria-label="Search site">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-        <span>Search</span>
-        <kbd class="kbd-shortcut">⌘K</kbd>
-      </button>
-      
-      <!-- Primary Conversion CTA -->
       <a href="/get-started" class="header-cta-btn hover-effect">Get started</a>
     </div>
 

@@ -114,8 +114,9 @@
 }
 
 .flow-node.highlight {
-  border-color: var(--accent-blue);
-  color: var(--accent-blue);
+  border-color: var(--text-primary);
+  color: var(--text-primary);
+  font-weight: 600;
 }
 
 .flow-node.dark {
@@ -247,7 +248,7 @@
   font-size: 3rem;
   font-weight: 700;
   color: var(--text-primary);
-  opacity: 0.1;
+  opacity: 0.15; /* Slightly increased for better visibility while remaining subtle */
   line-height: 1;
   display: block;
   margin-bottom: 16px;
@@ -303,8 +304,8 @@
   align-items: center;
   justify-content: center;
   font-size: 0.7rem;
-  font-weight: 700;
-  color: var(--accent-blue);
+  font-weight: 600;
+  color: var(--text-primary); /* Apple's neutral, trust-focused color */
 }
 
 .timeline-content h3 {
@@ -397,7 +398,7 @@
 }
 
 .plan-card.popular {
-  border-color: var(--accent-blue);
+  border-color: var(--text-primary); /* Neutral border for popular card */
   transform: scale(1.02);
   box-shadow: var(--shadow-lg);
 }
@@ -407,8 +408,8 @@
   top: -12px;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--accent-blue);
-  color: #fff;
+  background: var(--text-primary); /* Neutral badge for trust */
+  color: var(--bg-main);
   font-size: 0.75rem;
   font-weight: 600;
   padding: 4px 12px;
@@ -455,7 +456,7 @@
   content: '—';
   position: absolute;
   left: 0;
-  color: var(--accent-blue);
+  color: var(--text-primary); /* Neutral trust color for list markers */
 }
 
 .plan-btn {
@@ -473,8 +474,8 @@
 }
 
 .plan-btn:hover {
-  background: var(--accent-blue);
-  color: #fff;
+  background: var(--text-secondary); /* Subtle hover state */
+  color: var(--bg-main);
 }
 
 /* --- 8. Final CTA --- */
@@ -528,12 +529,17 @@
   transition: opacity 0.8s var(--ease-apple), transform 0.8s var(--ease-apple);
   transition-delay: var(--delay, 0s);
 }
+
 [data-reveal].is-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* --- Responsive Adjustments --- */
+/* =========================================
+   RESPONSIVE ADJUSTMENTS (Apple-Grade Mobile)
+   ========================================= */
+
+/* Tablet and below */
 @media (max-width: 900px) {
   .hero-container,
   .pillars-grid,
@@ -545,7 +551,7 @@
   }
 
   .hero-title {
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
 
   .plan-card.popular {
@@ -559,9 +565,52 @@
   .flow-arrow {
     transform: rotate(90deg);
   }
+
+  /* Left-align all headings on mobile for better readability */
+  .section-heading {
+    text-align: left;
+  }
+
+  .scaling-content .section-heading {
+    text-align: left;
+  }
 }
 
-@media (max-width: 600px) {
+/* Mobile phones */
+@media (max-width: 640px) {
+  /* Reduce padding on mobile */
+  .section-container {
+    padding: 0 5vw;
+  }
+
+  .startups-hero,
+  .pillars-section,
+  .scaling-section,
+  .principles-section,
+  .timeline-section,
+  .testimonials-section,
+  .plans-section {
+    padding: clamp(60px, 10vw, 80px) 0;
+  }
+
+  .final-cta-section {
+    padding: clamp(60px, 10vw, 80px) 5vw;
+  }
+
+  /* Typography adjustments */
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .pillar-title {
+    font-size: 1.5rem;
+  }
+
+  .principle-num {
+    font-size: 2.5rem;
+  }
+
+  /* Flow diagrams stack vertically */
   .flow-row {
     flex-direction: column;
   }
@@ -572,5 +621,87 @@
   
   .flow-arrow {
     transform: rotate(90deg);
+    margin: 4px 0;
+  }
+
+  /* Timeline adjustments for mobile */
+  .timeline {
+    padding-left: 24px;
+  }
+  
+  .timeline-marker {
+    left: -37px;
+    width: 20px;
+    height: 20px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: var(--text-primary); /* Maintain neutral trust color on mobile */
+  }
+
+  .timeline-item {
+    padding-bottom: 32px;
+  }
+
+  /* Testimonial cards */
+  .testimonial-card {
+    padding: 32px 24px;
+  }
+
+  .quote-mark {
+    font-size: 3rem;
+    top: 16px;
+    left: 20px;
+  }
+
+  /* Plans/pricing cards */
+  .plan-card {
+    padding: 32px 24px;
+  }
+
+  .plan-price {
+    font-size: 1.75rem;
+  }
+
+  .plan-btn {
+    width: 100%;
+  }
+
+  /* Final CTA */
+  .final-cta-section h2 {
+    font-size: 2rem;
+  }
+
+  .final-cta-section p {
+    font-size: 1rem;
+  }
+
+  .cta-btn {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+/* Small mobile phones */
+@media (max-width: 380px) {
+  .hero-title {
+    font-size: 2.25rem;
+  }
+
+  .pillar-title {
+    font-size: 1.35rem;
+  }
+
+  .principle-num {
+    font-size: 2rem;
+  }
+
+  .plan-price {
+    font-size: 1.5rem;
+  }
+
+  .flow-node,
+  .flow-card {
+    font-size: 0.85rem;
+    padding: 10px 14px;
   }
 }

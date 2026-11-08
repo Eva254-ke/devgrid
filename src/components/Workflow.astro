@@ -26,24 +26,28 @@ const steps = [
 ];
 ---
 
-<section id="workflow" class="workflow-section" data-reveal>
-  <div class="workflow-header" data-reveal>
-    <span class="workflow-eyebrow">Methodology</span>
-    <h2 class="workflow-title">Engineering Process</h2>
-    <p class="workflow-subtitle">
-      A transparent pipeline designed to take software from concept to production-grade reliability.
-    </p>
-  </div>
+<section id="workflow" class="workflow-section">
+  <div class="workflow-container">
+    
+    <div class="workflow-header" data-reveal>
+      <span class="workflow-eyebrow">Methodology</span>
+      <h2 class="workflow-title">Engineering Process</h2>
+      <p class="workflow-subtitle">
+        A transparent pipeline designed to take software from concept to production-grade reliability.
+      </p>
+    </div>
 
-  <div class="workflow-timeline">
-    {steps.map((item, index) => (
-      <div class="workflow-step" data-reveal style={`--delay: ${index * 0.15}s`}>
-        <div class="step-phase">{item.phase}</div>
-        <div class="step-details">
-          <h3>{item.title}</h3>
-          <p>{item.description}</p>
+    <div class="workflow-timeline">
+      {steps.map((item, index) => (
+        <div class="workflow-step" data-reveal style={`--delay: ${index * 0.15}s`}>
+          <div class="step-phase">{item.phase}</div>
+          <div class="step-details">
+            <h3>{item.title}</h3>
+            <p>{item.description}</p>
+          </div>
         </div>
-      </div>
-    ))}
+      ))}
+    </div>
+
   </div>
 </section>

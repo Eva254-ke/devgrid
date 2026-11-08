@@ -333,13 +333,32 @@
   transition: opacity 0.8s var(--ease-apple), transform 0.8s var(--ease-apple);
   transition-delay: var(--delay, 0s);
 }
+
 [data-reveal].is-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* --- Responsive Adjustments --- */
+/* =========================================
+   RESPONSIVE ADJUSTMENTS (Apple-Grade Mobile)
+   ========================================= */
+
+/* Tablet and below */
 @media (max-width: 900px) {
+  /* Left-align text for optimal mobile readability */
+  .section-heading,
+  .hero-eyebrow,
+  .hero-title,
+  .hero-subtitle,
+  .tech-subtitle,
+  .collective-content {
+    text-align: left;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
   /* Contrast Section: Stack and use horizontal divider */
   .contrast-grid {
     grid-template-columns: 1fr;
@@ -363,21 +382,88 @@
   /* Principles: Stack number above text */
   .principle-row {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 12px;
     padding: 32px 0;
   }
 
+  .principle-num {
+    font-size: 1.5rem;
+  }
+
+  /* Flow diagrams stack vertically and left-align */
   .flow-diagram.horizontal {
     flex-direction: column;
+    align-items: flex-start;
   }
   
   .flow-arrow {
     transform: rotate(90deg);
+    margin: 4px 0;
+  }
+
+  .tech-tags {
+    justify-content: flex-start;
   }
 }
 
+/* Mobile phones */
+@media (max-width: 640px) {
+  .section-container {
+    padding: 0 5vw;
+  }
+
+  /* Reduce section padding on mobile */
+  .about-hero,
+  .contrast-section,
+  .metrics-section,
+  .principles-section,
+  .tech-section,
+  .collective-section {
+    padding: clamp(60px, 10vw, 80px) 0;
+  }
+
+  .final-cta-section {
+    padding: clamp(60px, 10vw, 80px) 5vw;
+  }
+
+  /* Typography scaling */
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .contrast-title {
+    font-size: 1.5rem;
+  }
+
+  .metric-num {
+    font-size: 2.5rem;
+  }
+
+  .flow-node,
+  .tech-tag {
+    font-size: 0.85rem;
+    padding: 10px 14px;
+  }
+
+  .cta-btn {
+    width: 100%;
+    max-width: 320px; /* Thumb-friendly max width */
+  }
+}
+
+/* Small mobile phones */
 @media (max-width: 480px) {
+  /* Metrics collapse to single column on very small screens */
   .metrics-grid {
     grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .tech-tags {
+    gap: 8px;
   }
 }

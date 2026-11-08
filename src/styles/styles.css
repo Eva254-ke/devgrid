@@ -190,19 +190,117 @@ body {
   }
 }
 
+/* Header Layout: Logo Left, Nav Center, CTA Right */
 .header-inner {
   width: 100%;
-  max-width: 1024px;
-  padding: 0 22px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-@media (max-width: 768px) {
-  .header-inner {
-    max-width: none;
-    padding: 0 16px;
+.desktop-nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 400;
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  transition: all 0.2s var(--ease-fluid);
+  position: relative;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--accent-blue);
+  transition: width 0.3s var(--ease-apple), left 0.3s var(--ease-apple);
+  border-radius: 2px;
+}
+
+.nav-link:hover {
+  color: var(--text-primary);
+  background: var(--nav-hover);
+}
+
+.nav-link:hover::before {
+  width: 60%;
+  left: 20%;
+}
+
+.nav-link:active {
+  transform: scale(0.96);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+}
+
+.header-cta-btn {
+  display: none; /* Hidden on mobile by default */
+  align-items: center;
+  justify-content: center;
+  background: var(--text-primary);
+  color: var(--bg-main);
+  padding: 8px 20px;
+  border-radius: var(--radius-pill);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s var(--ease-apple);
+}
+
+.header-cta-btn:hover {
+  background: var(--accent-blue);
+  color: #ffffff;
+  transform: scale(1.02);
+}
+
+/* Mobile Menu CTA */
+.mobile-cta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 14px 24px;
+  background: var(--accent-blue);
+  color: #ffffff;
+  border-radius: var(--radius-pill);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 16px;
+  transition: transform 0.2s var(--ease-apple);
+}
+
+.mobile-cta-btn:active {
+  transform: scale(0.98);
+}
+
+/* Show desktop CTA on larger screens */
+@media (min-width: 769px) {
+  .header-cta-btn { 
+    display: inline-flex; 
   }
 }
 
@@ -260,161 +358,6 @@ body {
   margin-top: 2px;
 }
 
-/* --- Navigation Links --- */
-.nav-list {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  list-style: none;
-}
-
-.nav-link {
-  text-decoration: none;
-  color: var(--text-secondary);
-  font-size: 13px;
-  font-weight: 400;
-  padding: 6px 12px;
-  border-radius: var(--radius-pill);
-  transition: all 0.2s var(--ease-fluid);
-  position: relative;
-}
-
-.nav-link::before {
-  content: '';
-  position: absolute;
-  bottom: 4px;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background: var(--accent-blue);
-  transition: width 0.3s var(--ease-apple), left 0.3s var(--ease-apple);
-  border-radius: 2px;
-}
-
-.nav-link:hover {
-  color: var(--text-primary);
-  background: var(--nav-hover);
-}
-
-.nav-link:hover::before {
-  width: 60%;
-  left: 20%;
-}
-
-.nav-link:active {
-  transform: scale(0.96);
-}
-
-/* --- Apple-style Cmd+K Trigger Button --- */
-.search-trigger {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--glass-bg);
-  border: 1px solid var(--header-border);
-  padding: 5px 10px;
-  border-radius: var(--radius-pill);
-  font-size: 12px;
-  color: var(--text-secondary);
-  cursor: pointer;
-  transition: all 0.2s var(--spring-snappy), box-shadow 0.3s var(--ease-apple);
-  box-shadow: var(--shadow-sm);
-  position: relative;
-  overflow: hidden;
-}
-
-.search-trigger::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  transition: left 0.5s;
-}
-
-.search-trigger:hover::before {
-  left: 100%;
-}
-
-.search-trigger:hover {
-  color: var(--text-primary);
-  border-color: var(--text-secondary);
-  background: var(--bg-main);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-1px);
-}
-
-.search-trigger:active {
-  transform: scale(0.96);
-}
-
-.kbd-shortcut {
-  font-family: var(--font-sans);
-  background: rgba(125, 125, 125, 0.15);
-  padding: 1px 5px;
-  border-radius: 4px;
-  font-size: 10px;
-  font-weight: 500;
-  border: 1px solid var(--header-border);
-}
-
-/* --- Header Actions (Desktop Right Side) --- */
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.header-cta-btn {
-  display: none; /* Hidden on mobile by default */
-  align-items: center;
-  justify-content: center;
-  background: var(--text-primary);
-  color: var(--bg-main);
-  padding: 8px 18px;
-  border-radius: var(--radius-pill);
-  font-size: 13px;
-  font-weight: 500;
-  text-decoration: none;
-  transition: all 0.2s var(--ease-apple);
-}
-
-.header-cta-btn:hover {
-  background: var(--accent-blue);
-  color: #ffffff;
-  transform: scale(1.02);
-}
-
-/* Mobile Menu CTA */
-.mobile-cta-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  padding: 14px 24px;
-  background: var(--accent-blue);
-  color: #ffffff;
-  border-radius: var(--radius-pill);
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  margin-top: 16px;
-  transition: transform 0.2s var(--ease-apple);
-}
-
-.mobile-cta-btn:active {
-  transform: scale(0.98);
-}
-
-/* Show desktop CTA on larger screens */
-@media (min-width: 769px) {
-  .header-cta-btn { 
-    display: inline-flex; 
-  }
-}
-
 /* --- Mobile Menu Toggle --- */
 .mobile-menu-toggle {
   display: none;
@@ -441,8 +384,8 @@ body {
 }
 
 @media (max-width: 768px) {
-  .nav-list,
-  .search-trigger {
+  .desktop-nav,
+  .header-actions {
     display: none;
   }
 
@@ -531,14 +474,6 @@ body.menu-open {
   margin: 8px 0;
 }
 
-.mobile-search-trigger {
-  margin-top: 16px;
-  width: 100%;
-  justify-content: center;
-  padding: 12px 24px;
-  font-size: 1rem;
-}
-
 /* Menu Open State */
 .apple-header.is-open .mobile-nav {
   opacity: 1;
@@ -546,317 +481,7 @@ body.menu-open {
   transform: translateY(0);
 }
 
-/* =========================================
-   CAREERS PAGE STYLES (Consolidated & DRY)
-   ========================================= */
-.careers-hero {
-  padding: 160px 22px 120px;
-  background: var(--bg-main);
-}
-
-.careers-hero-content {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.careers-eyebrow {
-  display: inline-block;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--accent-blue);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  margin-bottom: 24px;
-}
-
-.careers-title {
-  font-size: clamp(44px, 8vw, 80px);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.05;
-  margin: 0 0 28px;
-  background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.careers-subtitle {
-  font-size: clamp(20px, 3vw, 26px);
-  font-weight: 400;
-  line-height: 1.4;
-  color: var(--text-secondary);
-  max-width: 600px;
-  margin: 0 auto 60px;
-}
-
-.careers-stats {
-  display: flex;
-  justify-content: center;
-  gap: clamp(40px, 15vw, 120px);
-}
-
-.stat {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.stat-number {
-  font-size: clamp(48px, 10vw, 80px);
-  font-weight: 700;
-  letter-spacing: -0.04em;
-  line-height: 1;
-  margin-bottom: 8px;
-}
-
-.stat-label {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--text-secondary);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-.careers-values {
-  padding: clamp(80px, 10vw, 140px) 5vw;
-  background: var(--bg-primary);
-}
-
-.careers-values-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.careers-values-title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-  margin: 0 0 clamp(60px, 8vw, 100px);
-}
-
-.careers-values-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: clamp(40px, 6vw, 80px);
-}
-
-.careers-value-item {
-  padding: 40px;
-  border-radius: var(--radius-lg);
-  background: var(--surface);
-  border: 1px solid var(--rule);
-  transition: transform 0.4s var(--ease-apple), border-color 0.4s var(--ease-apple);
-}
-
-.careers-value-item:hover {
-  transform: translateY(-8px);
-  border-color: var(--accent-blue);
-}
-
-.careers-value-item h3 {
-  font-size: clamp(1.5rem, 2.5vw, 2rem);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  margin: 0 0 16px;
-}
-
-.careers-value-item p {
-  font-size: 1.05rem;
-  line-height: 1.6;
-  color: var(--text-secondary);
-  margin: 0;
-}
-
-.careers-openings {
-  padding: clamp(80px, 10vw, 140px) 5vw;
-  background: var(--bg-main);
-}
-
-.careers-openings-container {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.careers-openings-header h2 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-  margin: 0 0 16px;
-}
-
-.careers-openings-subtitle {
-  font-size: clamp(1.1rem, 2vw, 1.35rem);
-  line-height: 1.5;
-  color: var(--text-secondary);
-  margin: 0;
-}
-
-.careers-openings-list {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(32px, 5vw, 60px);
-  margin-top: clamp(80px, 10vw, 140px);
-}
-
-.careers-opening {
-  padding: 48px;
-  border-radius: var(--radius-lg);
-  background: var(--surface);
-  border: 1px solid var(--rule);
-  transition: transform 0.4s var(--ease-apple), box-shadow 0.4s var(--ease-apple), border-color 0.4s var(--ease-apple);
-}
-
-.careers-opening:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--accent-blue);
-}
-
-.careers-opening-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 24px;
-}
-
-.careers-opening h3 {
-  font-size: clamp(1.5rem, 2.5vw, 2rem);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  margin: 0;
-}
-
-.careers-opening-type {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--accent-blue);
-  background: rgba(0, 113, 227, 0.08);
-  padding: 6px 12px;
-  border-radius: var(--radius-pill);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  white-space: nowrap;
-}
-
-.careers-opening-desc {
-  font-size: 1.05rem;
-  line-height: 1.6;
-  color: var(--text-secondary);
-  margin: 0 0 32px;
-}
-
-.careers-opening-requirements {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin: 0 0 32px;
-  padding: 0;
-}
-
-.careers-opening-requirements li {
-  font-size: 1rem;
-  line-height: 1.5;
-  color: var(--text-secondary);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.careers-opening-requirements li::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  background: var(--accent-blue);
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.careers-opening-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--accent-blue);
-  text-decoration: none;
-  transition: gap 0.3s var(--ease-apple);
-}
-
-.careers-opening-cta:hover {
-  gap: 12px;
-}
-
-/* Unified Careers CTA Section */
-.careers-cta-section {
-  padding: clamp(80px, 10vw, 140px) 5vw;
-  background: var(--bg-primary);
-  position: relative;
-  overflow: hidden;
-}
-
-/* Subtle top border for seamless section transition */
-.careers-cta-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--rule), transparent);
-}
-
-.careers-cta-container {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-}
-
-.careers-cta-section h2 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-  margin: 0 0 24px;
-  color: var(--text-primary);
-}
-
-.careers-cta-section p {
-  font-size: clamp(1.1rem, 2vw, 1.35rem);
-  line-height: 1.5;
-  color: var(--text-secondary);
-  margin: 0 auto 48px;
-  max-width: 600px;
-}
-
-.careers-cta-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--text-primary);
-  color: var(--bg-main);
-  padding: 16px 40px;
-  border-radius: var(--radius-pill);
-  font-size: 1rem;
-  font-weight: 500;
-  text-decoration: none;
-  transition: all 0.3s var(--ease-apple);
-}
-
-.careers-cta-btn:hover {
-  transform: scale(1.02);
-  background: var(--accent-blue);
-  color: #ffffff;
-  box-shadow: var(--shadow-glow);
-}
-
-/* --- Premium Lazy Section Animation --- */
+/* --- Premium Lazy Section Animation (Shared Utility) --- */
 .lazy-section {
   opacity: 0;
   transform: translateY(40px);
@@ -868,38 +493,4 @@ body.menu-open {
 .lazy-section.is-visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* --- Responsive Adjustments for Careers --- */
-@media (max-width: 768px) {
-  .careers-hero {
-    padding: 120px 18px 80px;
-  }
-
-  .careers-stats {
-    flex-direction: column;
-    gap: 40px;
-  }
-
-  .careers-values-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .careers-value-item {
-    padding: 32px;
-  }
-
-  .careers-opening {
-    padding: 32px;
-  }
-
-  .careers-opening-header {
-    flex-direction: column;
-    gap: 12px;
-  }
-  
-  .careers-cta-btn {
-    width: 100%;
-    max-width: 320px; /* Thumb-friendly max width */
-  }
 }

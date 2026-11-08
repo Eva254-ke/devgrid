@@ -49,7 +49,7 @@ const capabilities = [
 
     <div class="solutions-grid">
       {capabilities.map((item, index) => (
-        <div class="solution-item card-hover" data-reveal style={`--delay: ${index * 0.1}s`}>
+        <div class="solution-item" data-reveal style={`--delay: ${index * 0.1}s`}>
           <span class="solution-number">{item.num}</span>
           <h3>{item.title}</h3>
           <p>{item.description}</p>
