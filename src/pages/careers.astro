@@ -129,20 +129,25 @@ const openings = [
                 <li>{req}</li>
               ))}
             </ul>
-            <a href="/get-started" class="careers-opening-cta">Apply now →</a>
+            <!-- Dynamic mailto link with pre-filled subject line -->
+            <a href={`mailto:careers@devgridsystems.com?subject=Application%20-%20${encodeURIComponent(job.title)}`} class="careers-opening-cta">
+              Apply now →
+            </a>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- 4. Final CTA -->
+  <!-- 4. Final CTA (Mailto Link) -->
   <section class="careers-cta">
     <div class="section-container">
       <div class="careers-cta-container" data-reveal>
         <h2>Don't see a perfect fit?</h2>
         <p>We're always looking for exceptional talent. Send us your resume and let's build something extraordinary.</p>
-        <a href="mailto:careers@devgrid.agency" class="careers-cta-btn">General Application</a>
+        <a href="mailto:careers@devgridsystems.com?subject=General%20Application%20-%20DevGrid%20Innovations" class="careers-cta-btn">
+          General Application
+        </a>
       </div>
     </div>
   </section>

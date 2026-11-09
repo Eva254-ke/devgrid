@@ -28,7 +28,7 @@
   display: inline-block;
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--text-primary); /* Neutral trust color */
+  color: var(--text-primary);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   margin-bottom: 24px;
@@ -107,7 +107,7 @@
 
 .careers-value-item:hover {
   transform: translateY(-4px);
-  border-color: var(--text-primary); /* Neutral hover state */
+  border-color: var(--text-primary);
 }
 
 .careers-value-item h3 {
@@ -168,7 +168,7 @@
 .careers-opening:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
-  border-color: var(--text-primary); /* Neutral hover state */
+  border-color: var(--text-primary);
 }
 
 .careers-opening-header {
@@ -195,7 +195,6 @@
   justify-content: flex-end;
 }
 
-/* Neutral, trust-focused badges (No blue) */
 .careers-opening-type,
 .careers-opening-location {
   font-size: 0.8rem;
@@ -235,7 +234,6 @@
   gap: 12px;
 }
 
-/* Premium em-dash in neutral trust color (No blue dot) */
 .careers-opening-requirements li::before {
   content: '—';
   color: var(--text-primary);
@@ -250,14 +248,14 @@
   gap: 8px;
   font-size: 1rem;
   font-weight: 600;
-  color: var(--text-primary); /* Neutral trust color for CTA */
+  color: var(--text-primary);
   text-decoration: none;
   transition: gap 0.3s var(--ease-apple), color 0.3s var(--ease-apple);
 }
 
 .careers-opening-cta:hover {
   gap: 12px;
-  color: var(--accent-blue); /* Subtle accent only on hover interaction */
+  color: var(--accent-blue);
 }
 
 /* --- 4. Final CTA --- */
